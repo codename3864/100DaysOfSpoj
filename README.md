@@ -1,2 +1,1 @@
-# 100DaysOfSpoj
-Spoj problem practice
+Solve problems 
