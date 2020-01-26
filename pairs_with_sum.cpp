@@ -54,9 +54,9 @@ void allPairsWithSum(int *arr,int n,int sum) {
     int pair = sum-arr[i];
     if(mp.find(pair) != mp.end()) {
       int cnt = mp[pair];
-      cout << "cnt : " << cnt << endl;
+      // cout << "cnt : " << cnt << endl;
       for(int j = 0 ; j < cnt ; j++) {
-        // cout << pair <<" " << arr[i] << endl;
+        cout << pair <<" " << arr[i] << endl;
         total_cnt += 1;
       }
     }
