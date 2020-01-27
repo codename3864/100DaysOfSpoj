@@ -22,30 +22,38 @@ using namespace std;
 void subarrWithGivenSum(int *arr,int n,int target) {
   map <int,int> mp;
   int sum = 0;
+  int flag = 0 ;
   for(int i = 0 ; i  < n; i++) {
     sum += arr[i];
     if(sum == target){
+      flag =1;
       cout << 0 <<" " << i << endl;
       return ;
     }
+    flag = 0;
     if(mp.find(sum-target) != mp.end()) {
       cout << mp[sum-target]+1 <<" " << i << endl;
+      flag = 1;
       return ;
     }
     mp[sum] = i;
   }
+  if(flag == 0) cout << "-1\n";
 }
 
 int main() {
   int t;
+  cout <<"enter test cases : ";
   cin >> t ;
   while(t--) {
     int n ;
+    cout << "enter array size : ";
     cin >> n;
     int arr[n];
+    cout << "enter " << n <<" elements : ";
     for(int i = 0 ; i < n ; i++) {
       cin >> arr[i];
-    }
+    }cout << "enter target val : ";
     int sum; cin >> sum;
     subarrWithGivenSum(arr,n,sum);
   }
